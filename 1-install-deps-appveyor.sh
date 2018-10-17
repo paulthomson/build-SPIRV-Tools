@@ -17,10 +17,9 @@ curl -fsSL -o github-release.tar.gz https://github.com/${GITHUB_RELEASE_TOOL_USE
 7z x github-release.tar
 cd ..
 
-git clone https://github.com/KhronosGroup/SPIRV-Tools.git
-cd SPIRV-Tools
+git clone https://github.com/KhronosGroup/SPIRV-Tools.git ${CLONE_DIR}
+cd ${CLONE_DIR}
 git checkout $(cat ../COMMIT_ID)
 git clone https://github.com/KhronosGroup/SPIRV-Headers.git external/spirv-headers
 cd external/spirv-headers
 git checkout $(cat ../../../COMMIT_ID_HEADERS)
-

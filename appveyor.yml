@@ -22,9 +22,23 @@ environment:
      CMAKE_OPTIONS: " "
 
 install:
+  - set "CLONE_DIR=SPIRV-Tools"
   - bash 1-install-deps-appveyor.sh
   - refreshenv
-  - set PATH=%APPVEYOR_BUILD_FOLDER%\temp;%PATH%
+  - set "PATH=%APPVEYOR_BUILD_FOLDER%\temp;%PATH%"
+  - set "CLONE_DIR=SPIRV-Tools"
+  - set "GITHUB_USER=paulthomson"
+  - set "GITHUB_REPO=build-SPIRV-Tools"
+  - set "COMMIT_ID=%APPVEYOR_REPO_COMMIT%"
+  - set "GROUP_DOTS=github.%GITHUB_USER%"
+  - set "GROUP_SLASHES=github/%GITHUB_USER%"
+  - set "ARTIFACT=%GITHUB_REPO%"
+  - set "VERSION=%COMMIT_ID%"
+  - set "POM_FILE=%GITHUB_REPO%-%VERSION%.pom"
+  - set "TAG=%GROUP_SLASHES%/%ARTIFACT%/%VERSION%"
+  - set "CMAKE_BUILD_TYPE=%Configuration%"
+  - set "CLASSIFIER=Windows_x64_%CMAKE_BUILD_TYPE%"
+  - set "INSTALL_DIR=%ARTIFACT%-%VERSION%-%CLASSIFIER%"
 
 build_script:
   - bash 2-build-appveyor.sh

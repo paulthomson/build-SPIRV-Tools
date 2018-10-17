@@ -3,11 +3,9 @@ set -x
 set -e
 set -u
 
-cd SPIRV-Tools
+cd "${CLONE_DIR}"
 
-INSTALL_DIR="${BUILD_PLATFORM}-${CMAKE_BUILD_TYPE}"
 BUILD_DIR="${INSTALL_DIR}-build"
-
 
 mkdir -p "${BUILD_DIR}"
 cd "${BUILD_DIR}"
