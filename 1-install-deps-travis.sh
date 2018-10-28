@@ -6,8 +6,8 @@ set -u
 sudo mkdir -p /data/bin
 sudo chmod uga+rwx /data/bin
 
-GITHUB_RELEASE_TOOL_USER="paulthomson"
-GITHUB_RELEASE_TOOL_VERSION="v1.0.9.1"
+GITHUB_RELEASE_TOOL_USER="c4milo"
+GITHUB_RELEASE_TOOL_VERSION="v1.1.0"
 
 
 if [ "$(uname)" == "Darwin" ];
@@ -28,8 +28,8 @@ wget "https://github.com/${GITHUB_RELEASE_TOOL_USER}/github-release/releases/dow
 tar xf "github-release_${GITHUB_RELEASE_TOOL_VERSION}_${GITHUB_RELEASE_TOOL_ARCH}.tar.gz"
 popd
 
-git clone https://github.com/KhronosGroup/SPIRV-Tools.git ${CLONE_DIR}
-cd ${CLONE_DIR}
+git clone https://github.com/KhronosGroup/SPIRV-Tools.git "${CLONE_DIR}"
+cd "${CLONE_DIR}"
 git checkout $(cat ../COMMIT_ID)
 git clone https://github.com/KhronosGroup/SPIRV-Headers.git external/spirv-headers
 cd external/spirv-headers
