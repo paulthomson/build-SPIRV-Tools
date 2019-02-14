@@ -5,7 +5,7 @@ set -u
 
 cd "${CLONE_DIR}"
 
-BUILD_DIR="${INSTALL_DIR}-build"
+BUILD_DIR="b"
 
 mkdir -p "${BUILD_DIR}"
 cd "${BUILD_DIR}"
