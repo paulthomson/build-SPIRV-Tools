@@ -29,7 +29,7 @@ install:
   - export CLONE_DIR="SPIRV-Tools"
   - export PATH="/data/bin:$PATH"
   - export CMAKE_GENERATOR="Ninja"
-  - export CMAKE_OPTIONS=""
+  - export CMAKE_OPTIONS="-DSPIRV_BUILD_FUZZER=ON"
   - export GITHUB_USER="paulthomson"
   - export GITHUB_REPO="build-SPIRV-Tools"
   - export COMMIT_ID="${TRAVIS_COMMIT}"

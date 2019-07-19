@@ -18,7 +18,7 @@ environment:
   matrix:
    - PROFILE: MSVC2015
      CMAKE_GENERATOR: "Visual Studio 14 2015 Win64"
-     CMAKE_OPTIONS: " "
+     CMAKE_OPTIONS: "-DSPIRV_BUILD_FUZZER=ON"
 
 install:
   - set "CLONE_DIR=SPIRV-Tools"
